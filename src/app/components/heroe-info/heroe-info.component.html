@@ -1,0 +1,36 @@
+<h1>{{heroe.nombre | uppercase}} <small>{{heroe.aparicion | date: 'y'}}</small> </h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+
+    <div class="col-md-4">
+        
+        <img src="{{heroe.img}}" class="img-fluid" alt="{{heroe.nombre}}">
+        <br><br>
+        <br><br>
+        <button (click)="volverHeroes()"
+        type="button" class="btn btn-outline-danger btn-block"> <!-- btn-block para que se rellene el boton en todo el card y se alargue hasta el final-->
+          Regresar
+        </button>
+
+    </div>
+
+    <div class="col-md-8">
+
+        <h3>{{heroe.nombre}}</h3>
+        <hr>
+        <p>
+            {{heroe.bio}}
+        </p>
+        <hr>
+
+        <div>
+
+                <img *ngIf="heroe.casa == 'DC' " class="img-logo" src="assets/img/logoDC.png" alt="DC">
+                <img *ngIf="heroe.casa == 'Marvel'" class="img-logo"  src="assets/img/logoMarvel.png" alt="Marvel">
+            
+        </div>
+    
+    </div>
+
+</div>

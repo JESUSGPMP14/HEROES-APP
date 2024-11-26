@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+    <a class="navbar-brand" href="#">
+    <img src="assets/img/A-64.png" alt="" width="30" height="24">
+    </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['home']" routerLinkActive="active">Inicio</a>      <!-- active es la clase para resaltar el inicio en la barra-->
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['heroes']" routerLinkActive="active">Heroes</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['about']" routerLinkActive="active">About</a>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search">
+
+          <input class="form-control me-2" type="search" placeholder="Buscar Héroe" aria-label="Buscar Héroe" 
+          (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto > <!-- para el buscador se crea la variable #buscarTexto que se le mete por parametro a la funcion-->
+
+          <button (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-primary" type="button">Buscar</button> <!-- Para que esto funcione es importante agregar FormsModule en app.module.ts-->
+        </form>
+      </div>
+    </div>
+  </nav>
